@@ -94,9 +94,9 @@ Następnie klikamy w menu Narzędzia -> Płytka: "Arduino Yun" -> Menedżer pły
 
 ![Menedzer Plytek](images/menedzer_plytek.png)
 
-W okienku, które się pojawi wpisujemy ESP8266 i wybieramy eps8266 by ESP8266 Community i klikamy Instaluj.
+W okienku, które się pojawi wpisujemy ESP8266 i wybieramy esp8266 by ESP8266 Community i klikamy Instaluj.
 
-![Biblioteka ESP8266](images/eps_8266_lib.png)
+![Biblioteka ESP8266](images/esp_8266_lib.png)
 
 
 * Podłącz poprzez kabel microUSB Node MCU do komputera (sterowniki powinny zainstalować się automatycznie, gdyby tak się jednak nie stało - pobieramy sterowniki do CH340 np. z tej strony http://www.arduined.eu/ch340-windows-8-driver-download i instalujemy je ręcznie)
