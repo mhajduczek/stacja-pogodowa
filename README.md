@@ -15,40 +15,54 @@ Projekt stacji pogodowej z Node MCU & DHT11 & Blynk. Jest to świetny sposób do
 * Pobierz aplikację na Twój telefon ze sklepu Google Play lub App Store.
 * Zarejestruj się w aplikacji.
 * Utwórz nowy projekt. Podaj jego nazwę (Project name), wybierz z urządzeń (Choose device) EPS8266, następnie jako typ połączenia (Connection type) wybierz WiFi i kliknij w przycisk Create Project.
-![Nowy Projekt](images/nowy_projekt.png)
+
+<img src="images/nowy_projekt.png" height=450px></img>
+
 Po kliknięciu w przycisk Create Project pokaże się komunikat informujący o tym, że Auth Token został wysłany na email użyty podczas rejestracji:
-![Projekt Utworzony](images/projekt_utworzony.png)
+
+<img src="images/projekt_utworzony.png" height=450px></img>
+
 Jest to bardzo ważny krok - Auth Token jest niezbędny do komunikacji pomiędzy naszym czujnikiem a aplikacją Blynk.
 
 Na kolejnym ekranie zobaczymy pusty ekran naszej nowo utworzonej aplikacji:
-![Pusty Projekt](images/pusty_projekt.png)
+
+<img src="images/pusty_projekt.png" height=450px></img>
 
 Po kliknięciu w dowolne miejsca na czarnym tle ukażą się możliwe do dodania komponenty z tzw. Widget Box-a.
-![Dostępne Widgety](images/dostepne_widgety.png)
+
+<img src="images/dostepne_widgety.png" height=450px></img>
 
 Przesuwając listę dostępnych komponentów w dół znajdziemy komponent opisany jako 'Labeled Value' - klikamy w niego.
-![Opisany Wyświetlacz](images/opisany_wyswietlacz.png)
+
+<img src="images/opisany_wyswietlacz.png" height=450px></img>
 
 W polu Title - wpisujemy 'Temperatura', następnie klikamy w pole 'PIN' i wybieramy Virtual oraz V1.
-![Wybierz Pin V1](images/wybierz_pin.png)
+
+<img src="images/wybierz_pin.png" height=450px></img>
 
 W polu opisanym jako Label wpisujemy '/pin/'. Po wykonaniu wszystkich tych kroków powinniśmy uzyskać coś takiego:
-![Konfiguracja Pierwszego Komponentu](images/konfiguracja_pierwszego_komponentu.png)
+
+<img src="images/konfiguracja_pierwszego_komponentu.png" height=450px></img>
 
 Następnie dodajemy drugi taki sam komponent (Labeled Value):
-![Dodany Następny Komponent](images/dodany_nastepny_komponent.png)
+
+<img src="images/dodany_nastepny_komponent.png" height=450px></img>
 
 Podobnie jak poprzednio nadajemy mu nazwę, tym razem 'Wilgotność' oraz wybieramy pin - Virtual oraz V2:
-![Wybierz Pin V2](images/wybierz_pin2.png)
+
+<img src="images/wybierz_pin2.png" height=450px></img>
 
 Na koniec skonfigurowany komponent powinien wyglądać tak:
-![Konfiguracja Drugiego Komponentu](images/konfiguracja_drugiego_komponentu.png)
+
+<img src="images/konfiguracja_drugiego_komponentu.png" height=450px></img>
 
 Oba komponenty po pomyślnej konfiguracji będą wyglądać następująco:
-![Dodane Dwa Komponenty](images/dodane_dwa_komponenty.png)
+
+<img src="images/dodane_dwa_komponenty.png" height=450px></img>
 
 Klikamy w przycisk 'Play' oznaczający, że chcemy uruchomić naszą aplikację.
-![Uruchom](images/uruchom.png)
+
+<img src="images/uruchom.png" height=450px></img>
 
 
 ### Podłączenie czujnika temperatury i wilgotności do modułu Node MCU ###
