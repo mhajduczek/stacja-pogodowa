@@ -14,7 +14,7 @@ Projekt stacji pogodowej z Node MCU & DHT11 & Blynk. Jest to świetny sposób do
 
 * Pobierz aplikację na Twój telefon ze sklepu Google Play lub App Store.
 * Zarejestruj się w aplikacji.
-* Utwórz nowy projekt. Podaj jego nazwę (Project name), wybierz z urządzeń (Choose device) EPS8266, następnie jako typ połączenia (Connection type) wybierz WiFi i kliknij w przycisk Create Project.
+* Utwórz nowy projekt. Podaj jego nazwę (Project name), wybierz z urządzeń (Choose device) ESP8266, następnie jako typ połączenia (Connection type) wybierz WiFi i kliknij w przycisk Create Project.
 
 <img src="images/nowy_projekt.png" height=450px></img>
 
