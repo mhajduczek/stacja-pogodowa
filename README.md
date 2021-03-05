@@ -98,9 +98,16 @@ W okienku, które się pojawi wpisujemy ESP8266 i wybieramy esp8266 by ESP8266 C
 
 ![Biblioteka ESP8266](images/esp_8266_lib.png)
 
+Kliknij ponownie w menu Narzędzia -> Płytka: "Arduino Yun" -> ESP8266 Boards -> i wybierz NodeMCU 1.0 (ESP-12E Module)
+
+TODO rysunek
+
+Sprawdz czy wszystkie pozostałe opcje są zgodne z tym co na poniższym rysunku.
+
+TODO rysunek
 
 * Podłącz poprzez kabel microUSB Node MCU do komputera (sterowniki powinny zainstalować się automatycznie, gdyby tak się jednak nie stało - pobieramy sterowniki do CH340 np. z tej strony http://www.arduined.eu/ch340-windows-8-driver-download i instalujemy je ręcznie)
-* 
+
 
 ### Program do odczytu temperatury i wilgotności  ###
 
@@ -153,7 +160,7 @@ void loop() {
 }
 ```
 
-* Następnie kliknij w przycisk Wgraj - co spodowuje skompilowanie i wgranie programu do pamięciu modułu Node MCU.
+* Następnie kliknij w przycisk Wgraj (zostaniesz dodatkowo poproszony o zapisanie projektu, wybierz dowolną lokalizację i kliknij Zapisz) - co spodowuje skompilowanie i wgranie programu do pamięciu modułu Node MCU.
 ![Wgraj Program](images/wgraj_program.png)
 
 
