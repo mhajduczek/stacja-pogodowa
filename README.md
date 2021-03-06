@@ -54,7 +54,7 @@ Podobnie jak poprzednio nadajemy mu nazwę, tym razem 'Wilgotność' oraz wybier
 
 Na koniec skonfigurowany komponent powinien wyglądać tak:
 
-<img src="images/konfiguracja_drugiego_komponentu.png" height=450px></img>
+<img src="images/konfiguracja_drugiego_komponentu.jpg" height=450px></img>
 
 Oba komponenty po pomyślnej konfiguracji będą wyglądać następująco:
 
