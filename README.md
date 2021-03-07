@@ -179,6 +179,7 @@ void loop() {
 ```
 
 * Następnie kliknij w przycisk Wgraj (zostaniesz dodatkowo poproszony o zapisanie projektu, wybierz dowolną lokalizację i kliknij Zapisz) - co spodowuje skompilowanie i wgranie programu do pamięciu modułu Node MCU.
+
 ![Wgraj Program](images/wgraj_program.png)
 
 
@@ -192,9 +193,11 @@ void loop() {
 Bardzo pomocne w procesie rozwiązywania problemów z aplikacją lub sprzętem jest tzw. debugowanie (https://pl.wikipedia.org/wiki/Debugowanie) - w tym celu możemy użyć wbudowanego w Arduino IDE narzędzia zwanego 'Monitor Portu Szeregowego'. 
 
 * By go uruchomić klikamy w menu Narzędzia i wybieramy 'Monitor Portu Szeregowego'. 
+
 ![Monitor Portu Szeregowego](images/monitor_portu_szeregowego.png)
 
 * Następnie wybieramy ustawiony wcześniej w kodzie naszej aplikacji - baud rate: 115200 (upraszczając możemy o nim myśleć jako o szybkości przesyłania danych pomiędzy komputerem a Node MCU). Po wybraniu poprawnego baud rate powinniśmy zobaczyć wypisywany na ekran tekst (w naszym przykładzie jest to 'Zly odczyt z sensora DHT.').
+
 ![Komunikaty i Baud Rate](images/monitor_portu_szeregowego2.png)
 
 * By aplikacja uruchamiana na Node MCU wysyłała komunikaty do 'Monitora Portu Szeregowego' ważnym jest by w funkcji setup() (częśc kodu aplikacji rozpoczynająca się od void setup()) wpisać linijkę:
