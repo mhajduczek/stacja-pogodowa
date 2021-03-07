@@ -198,11 +198,16 @@ Bardzo pomocne w procesie rozwiązywania problemów z aplikacją lub sprzętem j
 ![Komunikaty i Baud Rate](images/monitor_portu_szeregowego2.png)
 
 * By aplikacja uruchamiana na Node MCU wysyłała komunikaty do 'Monitora Portu Szeregowego' ważnym jest by w funkcji setup() (częśc kodu aplikacji rozpoczynająca się od void setup()) wpisać linijkę:
+
+```
 Serial.begin(115200);
+```
 
 gdzie 115200 to właśnie nasz baud rate.
 
 * Następnie w miejscu w kodzie aplikacji, gdzie chcemy wysłać jakiś komunikat wpisujemy linijkę:
-Serial.println("Zly odczyt z sensora DHT.");
 
+```
+Serial.println("Zly odczyt z sensora DHT.");
+```
 
