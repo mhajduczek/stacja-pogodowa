@@ -8,6 +8,7 @@ Projekt stacji pogodowej z Node MCU & DHT11 & Blynk. Jest to świetny sposób do
 * Płytka Node MCU
 * Czujnik Temperatury i wilgotności DHT11
 * Aplikacja Blynk pokazująca odczyty z czujnika temperatury i wilgotności
+* Przewód połączeniowy żeńsko-żeński - 3szt.
 
 
 ### Instalacja i konfiguracja aplikacji Blynk ###
@@ -98,15 +99,32 @@ W okienku, które się pojawi wpisujemy ESP8266 i wybieramy esp8266 by ESP8266 C
 
 ![Biblioteka ESP8266](images/esp_8266_lib.png)
 
-Kliknij ponownie w menu Narzędzia -> Płytka: "Arduino Yun" -> ESP8266 Boards -> i wybierz NodeMCU 1.0 (ESP-12E Module)
+Po pobraniu dodatków (starowników i bibliotek) do naszej płytki możemy teraz wskazać Arduino IDE, że Node MCU jest płytką z którą chcemy pracować. W tym celu:
 
-TODO rysunek
+* Podłącz poprzez kabel microUSB Node MCU do komputera (sterowniki powinny zainstalować się automatycznie, gdyby tak się jednak nie stało - pobieramy sterowniki do CH340 np. z tej strony http://www.arduined.eu/ch340-windows-8-driver-download i instalujemy je ręcznie według instrukcji z podanej wcześniej strony)
 
-Sprawdz czy wszystkie pozostałe opcje są zgodne z tym co na poniższym rysunku.
+* Kliknij ponownie w menu Narzędzia -> Płytka: "Arduino Yun" -> ESP8266 Boards -> i wybierz NodeMCU 1.0 (ESP-12E Module)
 
-TODO rysunek
+![Wybierz Node MCU](images/wybierz_node_mcu_1_0.png)
 
-* Podłącz poprzez kabel microUSB Node MCU do komputera (sterowniki powinny zainstalować się automatycznie, gdyby tak się jednak nie stało - pobieramy sterowniki do CH340 np. z tej strony http://www.arduined.eu/ch340-windows-8-driver-download i instalujemy je ręcznie)
+* Sprawdz czy wszystkie pozostałe opcje są zgodne z tym co na poniższym rysunku. Uwaga: zamiast Port COM3 możesz mieć inny port - np. COM1, COM2, itd - zależy to od systemu i gniazda USB do którego został podłączony kabel microUSB.
+
+![Ustawienia połączenia z Node MCU](images/ustawienia_node_mcu.png)
+
+* Ostatnie 2 kroki konfiguracyjne to zainstalowanie biblioteki Blynk oraz bibliotek do obsługi modułu pogodowego DHT11. W tym celu kliknij w menu Narzędzia -> następnie wybierz 'Zarządzanie Bibliotekami...'. 
+
+![Instalacja bibliotek](images/zarzadzaj_bibliotekami.png)
+
+* W okienku które się pojawi wpisz 'Blynk', po chwili pojawią się wyniki wyszukiwania dla wpisanej frazy, w tych wynikach pojawi się Blynk (jako pierwszy wynik), kliknij w przycisk Instaluj - jak na obrazku poniżej. 
+
+![Zainstaluj Blynk](images/zainstaluj_blynk.png)
+
+* Podobnie wygląda instalacja bibliotek dla modułu DHT11: w tym samym okienku Zarządzania Bibliotekami, wpisz 'DHT', w wynikach wyszukiwania pojawi się 'DHT sensor library' i kliknij w przycisk Zainstaluj dla tego wyniku wyszukiwania. W okienku które się pojawi zostaniesz zapytany o to czy zainstalować wszystkie inne biblioteki wymagane dla działania biblioteki 'DHT sensor library' - kliknij w przycisk Install All - co spowoduje zainstalowanie wszystkich niezbędnych do działania DHT11 bibliotek.
+
+![Zainstaluj DHT](images/zainstaluj_dht.png)
+
+![Zainstaluj zależności dla DHT](images/zainstaluj_adafruit_unified_sensor.png)
+
 
 
 ### Program do odczytu temperatury i wilgotności  ###
@@ -168,3 +186,23 @@ void loop() {
 ### Ewentualne problemy ###
 
 * W razie problemów z wgraniem aplikacji na Node MCU, konieczne może być wgranie nowego firmware. W tym celu pobierz program ESP8266Flasher (ze strony: https://github.com/nodemcu/nodemcu-flasher/raw/master/Win64/Release/ESP8266Flasher.exe), uruchom program, wybierz port do którego podpięty jest Twój Node MCU i kliknij FLUSH. Program automatycznie pobierze najnowsze oprogramowanie dla Twojego modułu, następnie wgra je do pamięci modułu.
+
+### Debugowanie ###
+
+Bardzo pomocne w procesie rozwiązywania problemów z aplikacją lub sprzętem jest tzw. debugowanie (https://pl.wikipedia.org/wiki/Debugowanie) - w tym celu możemy użyć wbudowanego w Arduino IDE narzędzia zwanego 'Monitor Portu Szeregowego'. 
+
+* By go uruchomić klikamy w menu Narzędzia i wybieramy 'Monitor Portu Szeregowego'. 
+![Monitor Portu Szeregowego](images/monitor_portu_szeregowego.png)
+
+* Następnie wybieramy ustawiony wcześniej w kodzie naszej aplikacji - baud rate: 115200 (upraszczając możemy o nim myśleć jako o szybkości przesyłania danych pomiędzy komputerem a Node MCU). Po wybraniu poprawnego baud rate powinniśmy zobaczyć wypisywany na ekran tekst (w naszym przykładzie jest to 'Zly odczyt z sensora DHT.').
+![Komunikaty i Baud Rate](images/monitor_portu_szeregowego2.png)
+
+* By aplikacja uruchamiana na Node MCU wysyłała komunikaty do 'Monitora Portu Szeregowego' ważnym jest by w funkcji setup() (częśc kodu aplikacji rozpoczynająca się od void setup()) wpisać linijkę:
+Serial.begin(115200);
+
+gdzie 115200 to właśnie nasz baud rate.
+
+* Następnie w miejscu w kodzie aplikacji, gdzie chcemy wysłać jakiś komunikat wpisujemy linijkę:
+Serial.println("Zly odczyt z sensora DHT.");
+
+
