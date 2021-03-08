@@ -129,7 +129,7 @@ Po pobraniu dodatków (starowników i bibliotek) do naszej płytki możemy teraz
 
 ### Program do odczytu temperatury i wilgotności  ###
 
-* Przekopiuj ponizszy kod źródłowy programu do okna 'sketch' w Arduino IDE:
+* Przekopiuj ponizszy kod źródłowy programu do okna 'sketch' w Arduino IDE ([omówienie kodu tutaj](weather_code_explanation.md)):
 
 ```
 #include <ESP8266WiFi.h>
