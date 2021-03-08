@@ -156,6 +156,8 @@ void sendSensorData() {
   if (isnan(temperature) || isnan(humidity)) {
     Serial.println("Zly odczyt z sensora DHT.");
     return;
+  } else {
+    Serial.println("Dobry odczyt.");
   }
   
   Blynk.virtualWrite(V1, temperature);
